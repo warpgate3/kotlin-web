@@ -17,4 +17,14 @@ class   MemberController(
     fun getMember(@PathVariable id:  Long): Member {
         return memberService.findById(id)
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteMember(@PathVariable id:  Long) {
+        return memberService.deleteById(id)
+    }
+
+    @PutMapping("")
+    fun updateMember(@RequestBody m: Member): Member {
+        return memberService.update(m)
+    }
 }
