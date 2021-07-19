@@ -1,19 +1,20 @@
 package info.m2sj.kotlinweb
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
+@RequestMapping("/member")
 class   MemberController(
     var memberService: MemberService
 ) {
 
-    @GetMapping("/")
-    fun test(name: String): String {
-        val m = Member(
-            id = null, name = "rick", age = 39, sex = "M"
-        )
-        memberService.save(m)
-        return name
+    @PostMapping("")
+    fun saveMember(@RequestBody m: Member): Member {
+        return memberService.save(m)
+    }
+
+    @GetMapping("/{id}")
+    fun getMember(@PathVariable id:  Long): Member {
+        return memberService.findById(id)
     }
 }

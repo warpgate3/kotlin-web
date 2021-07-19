@@ -1,0 +1,121 @@
+GET http://localhost:8080/member/1
+
+<> 2021-07-19T201921.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201834.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201827.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201550.500.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201505.400.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201447.400.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201424.400.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201310.400.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-07-19T201156.400.json
+
+###
+
