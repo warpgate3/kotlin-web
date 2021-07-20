@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/member")
-class   MemberController(
+class MemberController(
     var memberService: MemberService
 ) {
     @PostMapping("")
@@ -13,12 +13,12 @@ class   MemberController(
     }
 
     @GetMapping("/{id}")
-    fun getMember(@PathVariable id:  Long): Member {
+    fun getMember(@PathVariable id: Long): Member {
         return memberService.findById(id)
     }
 
     @DeleteMapping("/{id}")
-    fun deleteMember(@PathVariable id:  Long) {
+    fun deleteMember(@PathVariable id: Long) {
         return memberService.deleteById(id)
     }
 
