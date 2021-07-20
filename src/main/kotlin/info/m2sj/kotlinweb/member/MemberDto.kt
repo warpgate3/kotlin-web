@@ -4,4 +4,5 @@ data class MemberDto(
     var name: String,
     var age: Int,
     var sex: String,
+
  )
