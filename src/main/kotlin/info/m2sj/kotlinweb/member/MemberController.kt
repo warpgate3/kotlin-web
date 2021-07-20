@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.*
 class   MemberController(
     var memberService: MemberService
 ) {
-
     @PostMapping("")
     fun saveMember(@RequestBody m: MemberDto): Member {
         return memberService.save(m)
