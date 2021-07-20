@@ -1,5 +1,6 @@
-package info.m2sj.kotlinweb
+package info.m2sj.kotlinweb.member
 
+import info.m2sj.kotlinweb.team.Team
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
@@ -15,5 +16,8 @@ class Member(
     @Column
     var age: Int,
     @Column
-    var sex: String
+    var sex: String,
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    var team: Team?
 )

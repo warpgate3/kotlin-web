@@ -1,4 +1,4 @@
-package info.m2sj.kotlinweb
+package info.m2sj.kotlinweb.member
 
 import org.springframework.web.bind.annotation.*
 
@@ -9,7 +9,7 @@ class   MemberController(
 ) {
 
     @PostMapping("")
-    fun saveMember(@RequestBody m: Member): Member {
+    fun saveMember(@RequestBody m: MemberDto): Member {
         return memberService.save(m)
     }
 

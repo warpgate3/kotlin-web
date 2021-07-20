@@ -1,4 +1,4 @@
-package info.m2sj.kotlinweb
+package info.m2sj.kotlinweb.member
 
 import org.springframework.data.jpa.repository.JpaRepository
 
