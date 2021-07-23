@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.*
 @RestController
 @RequestMapping("/member")
 class MemberController(
-
     var memberService: MemberService
 ) {
     @PostMapping("")
