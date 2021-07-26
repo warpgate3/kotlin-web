@@ -16,8 +16,18 @@ class BPService(
 
         val bp = BPEntity(
             null, LocalDateTime.now(), bpDto.systolic,
-            bpDto.diastolic, member = member)
+            bpDto.diastolic, member = member
+        )
 
         return bpRepository.save(bp)
+    }
+
+    fun listBpDto(id: Long): List<BPDto> {
+        return bpRepository.findByMemberId(id)
+            .map { m ->
+                m.member?.id?.let {
+                    BPDto(it, m.systolic, m.diastolic)
+                }
+            }.requireNoNulls()
     }
 }

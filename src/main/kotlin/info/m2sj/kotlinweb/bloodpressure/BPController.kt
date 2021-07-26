@@ -1,9 +1,6 @@
 package info.m2sj.kotlinweb.bloodpressure
 
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/bp")
@@ -13,5 +10,10 @@ class BPController (
     @PostMapping
     fun saveBp(@RequestBody bpDto: BPDto): BPEntity {
         return bpService.saveBloodPressure(bpDto)
+    }
+
+    @GetMapping("/{id}")
+    fun listBp(@PathVariable id: Long): List<BPDto> {
+        return bpService.listBpDto(id)
     }
 }
