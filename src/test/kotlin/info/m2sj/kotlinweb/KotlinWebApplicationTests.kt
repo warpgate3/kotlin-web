@@ -8,6 +8,12 @@ class KotlinWebApplicationTests {
 
     @Test
     fun contextLoads() {
+        val l = listOf(1, 2, 3, 4, 5)
+
+        l.forEach {
+            println(it)
+        }
+
     }
 
 }

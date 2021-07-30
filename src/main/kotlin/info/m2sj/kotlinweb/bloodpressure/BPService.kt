@@ -30,4 +30,13 @@ class BPService(
                 }
             }.requireNoNulls()
     }
+
+    fun avgBpDto(id: Long) {
+        val map = bpRepository.findByMemberId(id)
+            .map {
+                Pair(it.diastolic, it.systolic)
+            }.groupBy { it.first }
+            .mapValues {  }
+        println(map)
+    }
 }
