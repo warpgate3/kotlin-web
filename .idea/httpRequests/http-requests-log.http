@@ -1,3 +1,105 @@
+GET http://localhost:8080/bp/avg/2
+
+<> 2021-08-01T133553.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 145,
+  "diastolic": 94
+}
+
+<> 2021-08-01T133549.200.json
+
+###
+
+GET http://localhost:8080/bp/avg/2
+
+<> 2021-08-01T133537.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-01T133526.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 125,
+  "diastolic": 74
+}
+
+<> 2021-08-01T133521.200.json
+
+###
+
+GET http://localhost:8080/bp/avg/2
+
+<> 2021-08-01T133502.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 140,
+  "diastolic": 70
+}
+
+<> 2021-08-01T133440.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 120,
+  "diastolic": 80
+}
+
+<> 2021-08-01T133431.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 101,
+  "diastolic": 78
+}
+
+<> 2021-08-01T133420.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-08-01T133409.200.json
+
+###
+
 GET http://localhost:8080/bp/2
 
 <> 2021-07-30T195731.200.json
@@ -465,104 +567,6 @@ Content-Type: application/json
 }
 
 <> 2021-07-20T205656.400.json
-
-###
-
-POST http://localhost:8080/member
-
-<> 2021-07-20T205610.400.json
-
-###
-
-PUT http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "id": 1,
-  "name": "김명훈2",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-07-19T205501.200.json
-
-###
-
-GET http://localhost:8080/member/1
-
-<> 2021-07-19T205457.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-07-19T205454.200.json
-
-###
-
-GET http://localhost:8080/member/1
-
-<> 2021-07-19T205404.200.json
-
-###
-
-PUT http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "id": 1,
-  "name": "김명훈2",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-07-19T205401.200.json
-
-###
-
-GET http://localhost:8080/member/1
-
-<> 2021-07-19T205358.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-07-19T205354.200.json
-
-###
-
-GET http://localhost:8080/member/1
-
-<> 2021-07-19T205244.200.json
-
-###
-
-PUT http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "id": 1,
-  "name": "김명훈2",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-07-19T205240.200.json
 
 ###
 

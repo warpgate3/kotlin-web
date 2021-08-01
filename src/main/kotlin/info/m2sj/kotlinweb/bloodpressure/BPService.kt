@@ -31,12 +31,11 @@ class BPService(
             }.requireNoNulls()
     }
 
-    fun avgBpDto(id: Long) {
-        val map = bpRepository.findByMemberId(id)
+    fun avgBpDto(id: Long): Pair<Int, Int> {
+        return bpRepository.findByMemberId(id)
             .map {
                 Pair(it.diastolic, it.systolic)
-            }.groupBy { it.first }
-            .mapValues {  }
-        println(map)
+            }
+            .reduce { acc, pair -> Pair((acc.first + pair.first) / 2, (acc.second + pair.second) / 2) }
     }
 }

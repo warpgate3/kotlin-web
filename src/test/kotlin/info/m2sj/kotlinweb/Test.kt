@@ -15,6 +15,7 @@ class Test {
 
         val b = listOf(Pair(120, 80), Pair(110, 70))
 
+        //Pair 에서 전,후 값 평균 내기
         val rdc = b.runningReduce { acc, pair ->
             Pair((acc.first + pair.first) / 2, (acc.second + pair.second) / 2)
         }.last()
