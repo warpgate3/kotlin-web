@@ -2,6 +2,7 @@ package info.m2sj.kotlinweb.bloodpressure
 
 import info.m2sj.kotlinweb.member.MemberRepository
 import org.springframework.stereotype.Service
+import java.time.LocalDate
 import java.time.LocalDateTime
 
 @Service
@@ -15,15 +16,16 @@ class BPService(
             .orElseThrow { throw RuntimeException("No exist member") }
 
         val bp = BPEntity(
-            null, LocalDateTime.now(), bpDto.systolic,
+            null, LocalDate.now(), bpDto.systolic,
             bpDto.diastolic, member = member
         )
 
         return bpRepository.save(bp)
     }
 
-    fun listBpDto(id: Long): List<BPDto> {
-        return bpRepository.findByMemberId(id)
+    fun listBpDto(param: BpSearchParamDto): List<BPDto> {
+        return bpRepository.findByMemberBpSearchParamDto(id = param.id,
+            startDate = param.startDate, endDate = param.endDate)
             .map { m ->
                 m.member?.id?.let {
                     BPDto(it, m.systolic, m.diastolic)
