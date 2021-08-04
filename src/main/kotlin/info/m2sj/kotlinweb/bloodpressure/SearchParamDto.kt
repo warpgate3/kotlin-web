@@ -6,7 +6,7 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 
 data class BpSearchParamDto (
-    val id: Long,
+    val id: Long?,
     @DateTimeFormat(pattern = "yyyyMMdd") val startDate: LocalDate,
     @DateTimeFormat(pattern = "yyyyMMdd") val endDate: LocalDate
 )

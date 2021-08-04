@@ -3,7 +3,6 @@ package info.m2sj.kotlinweb.bloodpressure
 import info.m2sj.kotlinweb.member.MemberRepository
 import org.springframework.stereotype.Service
 import java.time.LocalDate
-import java.time.LocalDateTime
 
 @Service
 class BPService(
@@ -12,8 +11,10 @@ class BPService(
 ) {
     fun saveBloodPressure(bpDto: BPDto): BPEntity {
         bpDto.memberId
-        val member = memberRepository.findById(bpDto.memberId)
-            .orElseThrow { throw RuntimeException("No exist member") }
+        val member = bpDto.memberId?.let {
+            memberRepository.findById(it)
+                .orElseThrow { throw RuntimeException("No exist member") }
+        }
 
         val bp = BPEntity(
             null, LocalDate.now(), bpDto.systolic,
@@ -33,8 +34,9 @@ class BPService(
             }.requireNoNulls()
     }
 
-    fun avgBpDto(id: Long): Pair<Int, Int> {
-        return bpRepository.findByMemberId(id)
+    fun avgBpDto(param: BpSearchParamDto): Pair<Int, Int> {
+        return bpRepository.findByMemberBpSearchParamDto(id = param.id,
+            startDate = param.startDate, endDate = param.endDate)
             .map {
                 Pair(it.diastolic, it.systolic)
             }

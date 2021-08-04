@@ -23,7 +23,7 @@ class BPController (
     }
 
     @GetMapping("/avg/{id}")
-    fun avgBp(@PathVariable id: Long): Pair<Int, Int> {
-        return bpService.avgBpDto(id)
+    fun avgBp(@PathVariable id: Long, searchParam: BpSearchParamDto): Pair<Int, Int> {
+        return bpService.avgBpDto(searchParam)
     }
 }
