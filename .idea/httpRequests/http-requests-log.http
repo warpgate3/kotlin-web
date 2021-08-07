@@ -1,3 +1,303 @@
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T222324.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T221807.500.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T221317.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T220933.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T220914.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T220818.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T220341.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T220157.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T215520.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T215232.500.json
+
+###
+
+GET http://localhost:8080/bp/2?startDate=20210115&endDate=20211231
+
+<> 2021-08-07T214841.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T214805.200.json
+
+###
+
+GET http://localhost:8080/bp/2?startDate=20210115&endDate=20211231
+
+<> 2021-08-07T214610.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T214554.200.json
+
+###
+
+GET http://localhost:8080/member/2
+
+<> 2021-08-07T214541.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-08-07T214440.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-08-07T214413.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 115,
+  "diastolic": 84
+}
+
+<> 2021-08-07T214356.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T214219.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-07T213856.500.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-06T213718.500.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-06T213706.500.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-06T213404.500.json
+
+###
+
+GET http://localhost:8080/bp/2?startDate=20210115&endDate=20211231
+
+<> 2021-08-06T213341.200.json
+
+###
+
+GET http://localhost:8080/bp/2?startDate=20210115&endDate=20210131
+
+<> 2021-08-06T213329.200.json
+
+###
+
+GET http://localhost:8080/bp/avg/2
+
+<> 2021-08-06T213317.500.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-06T213307.500.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 115,
+  "diastolic": 84
+}
+
+<> 2021-08-06T213301.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 125,
+  "diastolic": 74
+}
+
+<> 2021-08-06T213256.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 125,
+  "diastolic": 94
+}
+
+<> 2021-08-06T213250.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 115,
+  "diastolic": 74
+}
+
+<> 2021-08-06T213243.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 135,
+  "diastolic": 94
+}
+
+<> 2021-08-06T213237.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 125,
+  "diastolic": 84
+}
+
+<> 2021-08-06T213231.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 115,
+  "diastolic": 74
+}
+
+<> 2021-08-06T213226.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 145,
+  "diastolic": 94
+}
+
+<> 2021-08-06T213215.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김명훈",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-08-06T213201.200.json
+
+###
+
 GET http://localhost:8080/bp/2?startDate=20210115&endDate=20210131
 
 <> 2021-08-02T212128.200.json
@@ -79,389 +379,6 @@ GET http://localhost:8080/bp/2?searchDate=2021-01-12&endDate=2021-01-31
 GET http://localhost:8080/bp/2?searchDate=20210112&endDate=20210131
 
 <> 2021-08-02T210235.400.json
-
-###
-
-GET http://localhost:8080/bp/2?searchDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T210129.400.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-08-02T210034.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 145,
-  "diastolic": 94
-}
-
-<> 2021-08-02T210028.200.json
-
-###
-
-PUT http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "id": 1,
-  "name": "김명훈2",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-08-02T210023.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-08-02T210019.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-08-02T205939.200.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-08-02T205939-2.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 145,
-  "diastolic": 94
-}
-
-<> 2021-08-02T205939-1.500.json
-
-###
-
-GET http://localhost:8080/bp/avg/2
-
-<> 2021-08-02T205939.500.json
-
-###
-
-GET http://localhost:8080/bp/avg/2
-
-<> 2021-08-01T133553.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 145,
-  "diastolic": 94
-}
-
-<> 2021-08-01T133549.200.json
-
-###
-
-GET http://localhost:8080/bp/avg/2
-
-<> 2021-08-01T133537.200.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-08-01T133526.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 125,
-  "diastolic": 74
-}
-
-<> 2021-08-01T133521.200.json
-
-###
-
-GET http://localhost:8080/bp/avg/2
-
-<> 2021-08-01T133502.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 140,
-  "diastolic": 70
-}
-
-<> 2021-08-01T133440.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 120,
-  "diastolic": 80
-}
-
-<> 2021-08-01T133431.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 101,
-  "diastolic": 78
-}
-
-<> 2021-08-01T133420.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-08-01T133409.200.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-07-30T195731.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 101,
-  "diastolic": 78
-}
-
-<> 2021-07-30T195727.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 110,
-  "diastolic": 80
-}
-
-<> 2021-07-30T195718.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 100,
-  "diastolic": 71
-}
-
-<> 2021-07-30T195712.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 110,
-  "diastolic": 75
-}
-
-<> 2021-07-30T195702.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-07-30T195655.200.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-07-30T195546.200.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-07-30T195520.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 110,
-  "diastolic": 75
-}
-
-<> 2021-07-30T195434.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 140,
-  "diastolic": 85
-}
-
-<> 2021-07-30T195428.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 130,
-  "diastolic": 69
-}
-
-<> 2021-07-30T195420.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 100,
-  "diastolic": 79
-}
-
-<> 2021-07-30T195407.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 110,
-  "diastolic": 69
-}
-
-<> 2021-07-30T195354.500.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 110,
-  "diastolic": 69
-}
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-07-26T222151.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 110,
-  "diastolic": 69
-}
-
-<> 2021-07-26T222138.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 130,
-  "diastolic": 75
-}
-
-<> 2021-07-26T222130.200.json
 
 ###
 

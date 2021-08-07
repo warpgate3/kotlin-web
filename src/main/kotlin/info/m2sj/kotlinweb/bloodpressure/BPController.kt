@@ -26,4 +26,9 @@ class BPController (
     fun avgBp(@PathVariable id: Long, searchParam: BpSearchParamDto): Pair<Int, Int> {
         return bpService.avgBpDto(searchParam)
     }
+
+    @PutMapping("/{id}")
+    fun updateBpList(bpList: List<BPDto>): List<BPDto> {
+        return bpService.updateBpList(bpList)
+    }
 }

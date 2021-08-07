@@ -25,8 +25,10 @@ class BPService(
     }
 
     fun listBpDto(param: BpSearchParamDto): List<BPDto> {
+        val startDate = param.startDate?:LocalDate.of(2005,1,1)
+        val endDate = param.endDate?: LocalDate.now()
         return bpRepository.findByMemberBpSearchParamDto(id = param.id,
-            startDate = param.startDate, endDate = param.endDate)
+            startDate = startDate, endDate = endDate)
             .map { m ->
                 m.member?.id?.let {
                     BPDto(it, m.systolic, m.diastolic)
@@ -35,11 +37,21 @@ class BPService(
     }
 
     fun avgBpDto(param: BpSearchParamDto): Pair<Int, Int> {
+        val startDate = param.startDate?:LocalDate.of(2005,1,1)
+        val endDate = param.endDate?: LocalDate.now()
         return bpRepository.findByMemberBpSearchParamDto(id = param.id,
-            startDate = param.startDate, endDate = param.endDate)
+            startDate = startDate, endDate = endDate
+        )
             .map {
                 Pair(it.diastolic, it.systolic)
             }
             .reduce { acc, pair -> Pair((acc.first + pair.first) / 2, (acc.second + pair.second) / 2) }
+    }
+
+    fun updateBpList(bpList: List<BPDto>): List<BPDto> {
+        bpList.forEach {
+            it.memberId
+        }
+        return listOf()
     }
 }
