@@ -1,3 +1,219 @@
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210557.200.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210513.200.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210415.200.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210318.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210300.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210052.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T210023.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T205847.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T205824.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+[
+  {
+    "id": 4,
+    "systolic": 1500,
+    "diastolic": 740
+  }
+]
+
+<> 2021-08-08T205810.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "id": 4,
+  "systolic": 1500,
+  "diastolic": 740
+}
+
+<> 2021-08-08T205710.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "id": 4,
+  "memberId": 2,
+  "systolic": 1500,
+  "diastolic": 740
+}
+
+<> 2021-08-08T205616.500.json
+
+###
+
+PUT http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "id": 4,
+  "memberId": 2,
+  "systolic": 1500,
+  "diastolic": 740
+}
+
+<> 2021-08-08T205325.405.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-08T204359.200.json
+
+###
+
+POST http://localhost:8080/bp
+Content-Type: application/json
+
+{
+  "memberId": 2,
+  "systolic": 115,
+  "diastolic": 84
+}
+
+<> 2021-08-08T204353.200.json
+
+###
+
+GET http://localhost:8080/bp/2
+
+<> 2021-08-08T204006.200.json
+
+###
+
 GET http://localhost:8080/bp/2
 
 <> 2021-08-07T222324.200.json
@@ -269,116 +485,6 @@ Content-Type: application/json
 }
 
 <> 2021-08-06T213226.200.json
-
-###
-
-POST http://localhost:8080/bp
-Content-Type: application/json
-
-{
-  "memberId": 2,
-  "systolic": 145,
-  "diastolic": 94
-}
-
-<> 2021-08-06T213215.200.json
-
-###
-
-POST http://localhost:8080/member
-Content-Type: application/json
-
-{
-  "name": "김명훈",
-  "age": 40,
-  "sex": "M"
-}
-
-<> 2021-08-06T213201.200.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210115&endDate=20210131
-
-<> 2021-08-02T212128.200.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210115&endDate=20210131
-
-<> 2021-08-02T212111.200.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210115&endDate=20210131
-
-<> 2021-08-02T211837.500.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210115&endDate=20210131
-
-<> 2021-08-02T211655.500.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210112&endDate=20210131
-
-<> 2021-08-02T211640.500.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210112&endDate=20210131
-
-<> 2021-08-02T211623.500.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=20210112&endDate=20210131
-
-<> 2021-08-02T211602.400.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T211409.500.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T211044.400.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T210925.400.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T210734.500.json
-
-###
-
-GET http://localhost:8080/bp/2?startDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T210533.500.json
-
-###
-
-GET http://localhost:8080/bp/2?searchDate=2021-01-12&endDate=2021-01-31
-
-<> 2021-08-02T210515.500.json
-
-###
-
-GET http://localhost:8080/bp/2?searchDate=20210112&endDate=20210131
-
-<> 2021-08-02T210235.400.json
 
 ###
 

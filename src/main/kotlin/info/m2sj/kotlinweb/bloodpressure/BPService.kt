@@ -2,6 +2,7 @@ package info.m2sj.kotlinweb.bloodpressure
 
 import info.m2sj.kotlinweb.member.MemberRepository
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import java.time.LocalDate
 
 @Service
@@ -25,21 +26,24 @@ class BPService(
     }
 
     fun listBpDto(param: BpSearchParamDto): List<BPDto> {
-        val startDate = param.startDate?:LocalDate.of(2005,1,1)
-        val endDate = param.endDate?: LocalDate.now()
-        return bpRepository.findByMemberBpSearchParamDto(id = param.id,
-            startDate = startDate, endDate = endDate)
+        val startDate = param.startDate ?: LocalDate.of(2005, 1, 1)
+        val endDate = param.endDate ?: LocalDate.now()
+        return bpRepository.findByMemberBpSearchParamDto(
+            id = param.id,
+            startDate = startDate, endDate = endDate
+        )
             .map { m ->
                 m.member?.id?.let {
-                    BPDto(it, m.systolic, m.diastolic)
+                    m.id?.let { it1 -> BPDto(it1, it, m.systolic, m.diastolic) }
                 }
             }.requireNoNulls()
     }
 
     fun avgBpDto(param: BpSearchParamDto): Pair<Int, Int> {
-        val startDate = param.startDate?:LocalDate.of(2005,1,1)
-        val endDate = param.endDate?: LocalDate.now()
-        return bpRepository.findByMemberBpSearchParamDto(id = param.id,
+        val startDate = param.startDate ?: LocalDate.of(2005, 1, 1)
+        val endDate = param.endDate ?: LocalDate.now()
+        return bpRepository.findByMemberBpSearchParamDto(
+            id = param.id,
             startDate = startDate, endDate = endDate
         )
             .map {
@@ -48,9 +52,16 @@ class BPService(
             .reduce { acc, pair -> Pair((acc.first + pair.first) / 2, (acc.second + pair.second) / 2) }
     }
 
+    @Transactional
     fun updateBpList(bpList: List<BPDto>): List<BPDto> {
         bpList.forEach {
-            it.memberId
+            val bp = bpRepository.findById(it.id)
+            bp.ifPresent { e ->
+                run {
+                    e.systolic = it.systolic
+                    e.diastolic = it.diastolic
+                }
+            }
         }
         return listOf()
     }

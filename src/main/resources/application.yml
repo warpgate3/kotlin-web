@@ -19,6 +19,9 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+  webflux:
+    hiddenmethod:
+      filter:
+        enabled: true
 logging.level:
   org.hibernate.SQL: debug
-

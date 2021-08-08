@@ -27,8 +27,8 @@ class BPController (
         return bpService.avgBpDto(searchParam)
     }
 
-    @PutMapping("/{id}")
-    fun updateBpList(bpList: List<BPDto>): List<BPDto> {
+    @PutMapping("")
+    fun updateBpList(@RequestBody bpList: List<BPDto>): List<BPDto> {
         return bpService.updateBpList(bpList)
     }
 }
