@@ -23,9 +23,10 @@ internal class FbsServiceTest(
         assertThat(fbsDto.bloodSugar, `is`(equalTo(result.bloodSugar)))
         assertThat(0, `is`(lessThan<Long>(result.id)))
         println(">>>" + result.id)
-        val searched = result.id?.let {
-            fbsRepository.findById(it).get()
-        }
-        assertThat(fbsDto.bloodSugar, `is`(equalTo(searched?.bloodSugar)))
+//        val searched = result.id?.let {
+//            fbsRepository.findById(it).get()
+//        }
+        val searched = fbsRepository.findById(result.id!!).get()
+        assertThat(fbsDto.bloodSugar, `is`(equalTo(searched.bloodSugar)))
     }
 }
