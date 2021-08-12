@@ -17,7 +17,7 @@ class MemberServiceImpl(
     private var teamRepository: TeamRepository
 ) : MemberService {
     override fun save(member: MemberDto): Member {
-        val m = Member(age = member.age, name = member.name, sex = member.sex, team = null)
+        val m = Member(age = member.age, name = member.name, sex = member.sex, team = null, bps = listOf(), fps = listOf())
 
         val t = Team(null, "fox-team")
         teamRepository.save(t)

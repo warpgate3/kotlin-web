@@ -13,8 +13,10 @@ class MemberController(
     }
 
     @GetMapping("/{id}")
-    fun getMember(@PathVariable id: Long): Member {
-        return memberService.findById(id)
+    fun getMember(@PathVariable id: Long): MemberDto {
+        val mem = memberService.findById(id)
+
+        return MemberDto(mem.name, mem.age, mem.sex)
     }
 
     @DeleteMapping("/{id}")
