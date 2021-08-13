@@ -6,6 +6,7 @@ plugins {
     kotlin("jvm") version "1.5.20"
     kotlin("plugin.spring") version "1.5.20"
     kotlin("plugin.jpa") version "1.5.20"
+    kotlin("kapt") version "1.5.20"
 }
 
 group = "info.m2sj"
@@ -14,6 +15,10 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
     mavenCentral()
+}
+
+sourceSets["main"].withConvention(org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet::class) {
+    kotlin.srcDir("$buildDir/generated/source/kapt/main")
 }
 
 dependencies {
@@ -27,6 +32,9 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.7.1")
+    kapt("org.springframework.boot:spring-boot-configuration-processor")
+    kapt("com.querydsl:querydsl-apt:4.2.1:jpa")
+    implementation("com.querydsl:querydsl-jpa:4.2.1")
 }
 
 tasks.withType<KotlinCompile> {
