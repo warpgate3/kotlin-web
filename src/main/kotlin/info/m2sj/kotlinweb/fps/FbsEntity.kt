@@ -12,5 +12,5 @@ class FbsEntity(
     var id: Long? = null,
     @Column(name="reg_date") var regDate: LocalDate,
     @Column(name="value") var bloodSugar: Float,
-    @ManyToOne  @JoinColumn(name = "member_id") var member: Member?
+    @ManyToOne(fetch = FetchType.EAGER)  @JoinColumn(name = "member_id") var member: Member?
 )

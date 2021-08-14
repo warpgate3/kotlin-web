@@ -15,5 +15,5 @@ class BPEntity(
     @Column(name="reg_date") var regDate: LocalDate,
     @Column(name="systolic") var systolic: Int,
     @Column(name="diastolic") var diastolic: Int,
-    @ManyToOne  @JoinColumn(name = "member_id") var member: Member?
+    @ManyToOne(fetch = FetchType.LAZY)  @JoinColumn(name = "member_id") var member: Member?
 )

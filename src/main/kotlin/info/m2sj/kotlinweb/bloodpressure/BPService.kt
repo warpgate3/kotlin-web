@@ -1,5 +1,6 @@
 package info.m2sj.kotlinweb.bloodpressure
 
+import info.m2sj.kotlinweb.member.Member
 import info.m2sj.kotlinweb.member.MemberRepository
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -10,6 +11,14 @@ class BPService(
     var bpRepository: BPRepository,
     var memberRepository: MemberRepository
 ) {
+
+    fun listBp(memberId: Long): List<BPEntity> {
+        val mem = memberRepository.findById(memberId)
+        mem.let {
+            return bpRepository.findByMember(it.get())
+        }
+    }
+
     fun saveBloodPressure(bpDto: BPDto): BPEntity {
         bpDto.memberId
         val member = bpDto.memberId?.let {
