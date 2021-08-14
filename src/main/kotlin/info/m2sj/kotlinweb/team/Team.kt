@@ -10,5 +10,8 @@ class Team(
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null,
     @Column
-    var teamName: String
+    var teamName: String,
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "team")
+    var member: MutableList<Member> = mutableListOf()
 )

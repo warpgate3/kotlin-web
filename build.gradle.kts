@@ -35,6 +35,8 @@ dependencies {
     kapt("org.springframework.boot:spring-boot-configuration-processor")
     kapt("com.querydsl:querydsl-apt:4.2.1:jpa")
     implementation("com.querydsl:querydsl-jpa:4.2.1")
+    //implementation("org.jetbrains.kotlin:kotlin-noarg:1.5.20")
+    implementation("org.jetbrains.kotlin:kotlin-allopen:1.5.20")
 }
 
 tasks.withType<KotlinCompile> {
@@ -42,6 +44,11 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "11"
     }
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    //annotation "javax.persistence.Entity"
 }
 
 tasks.withType<Test> {

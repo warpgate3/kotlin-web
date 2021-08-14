@@ -6,7 +6,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name="fasting_blood_sugar")
-class FbsEntity(
+data class FbsEntity(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null,

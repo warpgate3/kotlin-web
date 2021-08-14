@@ -8,3 +8,9 @@
 - 혈압 수정(리스트)
 
 
+
+## Kotlin 과 JPA 연동시 문제점들
+
+### lazy Loading
+
+### OnetoMany 관계의 List 문제 

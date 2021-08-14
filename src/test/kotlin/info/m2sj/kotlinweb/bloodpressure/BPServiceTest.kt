@@ -10,7 +10,7 @@ import org.springframework.test.context.TestConstructor
 
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @SpringBootTest
-internal class BPServiceTest(val bpService: BPService, val memberService: MemberService) {
+internal class BPServiceTest(val bpService: BPService) {
     @Test
     fun listBpDto() {
         val list = bpService.listBp(2)

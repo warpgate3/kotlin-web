@@ -24,8 +24,8 @@ class Member(
     var team: Team?,
 
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-    var fps: List<FbsEntity>,
+    var fps: MutableList<FbsEntity>,
 
     @OneToMany(mappedBy = "member", fetch = FetchType.LAZY)
-    var bps: List<BPEntity>
+    var bps: MutableList<BPEntity>
 )
