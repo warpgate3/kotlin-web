@@ -12,7 +12,15 @@ import javax.management.Query.eq
 
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @SpringBootTest
-internal class MemberServiceImplTest(val memberService: MemberService) {
+internal class MemberServiceImplTest(val memberService: MemberService,
+                                     val memberOriginRepository: MemberOriginRepository
+                                     ) {
+
+    @Test
+    fun findWithMemberOrigin() {
+        val mem = memberOriginRepository.findMember(2)
+        println("mem >>> $mem")
+    }
 
     @Test
     fun findById() {

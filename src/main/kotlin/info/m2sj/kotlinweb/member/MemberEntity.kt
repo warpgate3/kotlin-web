@@ -3,12 +3,18 @@ package info.m2sj.kotlinweb.member
 import info.m2sj.kotlinweb.bloodpressure.BPEntity
 import info.m2sj.kotlinweb.fps.FbsEntity
 import info.m2sj.kotlinweb.team.Team
+import lombok.Getter
+import lombok.Setter
+import lombok.ToString
 import org.hibernate.annotations.DynamicUpdate
 import javax.persistence.*
 
 @Entity
 @Table(name="member")
 @DynamicUpdate //변경된 컬럼만 UPDATE 하기 위해서 선언
+@Getter
+@Setter
+@ToString
 class Member(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

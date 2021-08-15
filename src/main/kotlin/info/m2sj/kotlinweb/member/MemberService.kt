@@ -3,6 +3,7 @@ package info.m2sj.kotlinweb.member
 import info.m2sj.kotlinweb.team.Team
 import info.m2sj.kotlinweb.team.TeamRepository
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 interface MemberService {
     fun save(member: MemberDto): Member
@@ -25,8 +26,16 @@ class MemberServiceImpl(
         return memberRepository.save(m)
     }
 
+    @Transactional
     override fun findById(id: Long): Member {
-        return memberRepository.getById(id)
+        val mem = memberRepository.getById(id)
+
+        val id = mem.team?.id
+        println("id--->$id")
+        mem.fps.forEach { entity -> println("fps id--->${entity.id}") }
+        mem.bps.forEach { entity -> println("pbs id--->${entity.id}") }
+
+        return mem
     }
 
     override fun deleteById(id: Long) {
