@@ -23,6 +23,19 @@ internal class MemberServiceImplTest(val memberService: MemberService,
     }
 
     @Test
+    fun findWithMembersOrigin() {
+        val mem = memberOriginRepository.findMembers(2)
+        println("mem >>> $mem")
+    }
+
+
+    @Test
+    fun findWithMemberDtoOrigin() {
+        val mem = memberOriginRepository.findMemberDto(2)
+        println("mem >>> $mem")
+    }
+
+    @Test
     fun findById() {
         val mem = memberService.findById(2)
 
