@@ -10,6 +10,7 @@ interface MemberService {
     fun findById(id: Long): Member
     fun deleteById(id: Long)
     fun update(m: Member): Member
+    fun findAll(): List<Member>
 }
 
 @Service
@@ -44,5 +45,10 @@ class MemberServiceImpl(
 
     override fun update(m: Member): Member {
         return memberRepository.save(m)
+    }
+
+    @Transactional(readOnly = true)
+    override fun findAll(): List<Member> {
+        return memberRepository.findAll()
     }
 }

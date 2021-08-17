@@ -1,3 +1,29 @@
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김태희",
+  "age": 40,
+  "sex": "M"
+}
+
+<> 2021-08-17T220007.200.json
+
+###
+
+POST http://localhost:8080/member
+Content-Type: application/json
+
+{
+  "name": "김수로",
+  "age": 55,
+  "sex": "M"
+}
+
+<> 2021-08-17T215954.200.json
+
+###
+
 POST http://localhost:8080/bp
 Content-Type: application/json
 
@@ -459,18 +485,6 @@ GET http://localhost:8080/bp/2
 GET http://localhost:8080/bp/2
 
 <> 2021-08-06T213718.500.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-08-06T213706.500.json
-
-###
-
-GET http://localhost:8080/bp/2
-
-<> 2021-08-06T213404.500.json
 
 ###
 
