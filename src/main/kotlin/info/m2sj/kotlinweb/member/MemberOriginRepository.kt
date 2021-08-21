@@ -10,7 +10,7 @@ class MemberOriginRepository(val em: EntityManager) {
             """
            select m from User m
             join fetch m.bps
-            join fetch m.team where m.id =?1
+            join fetch m.group where m.id =?1
         """, Member::class.java).setParameter(1, memberId)
             .singleResult
     }
@@ -21,7 +21,7 @@ class MemberOriginRepository(val em: EntityManager) {
             """
            select distinct m from User m   
             join fetch m.bps
-            join fetch m.team where m.id =?1
+            join fetch m.group where m.id =?1
         """, Member::class.java).setParameter(1, memberId)
             .resultList
     }

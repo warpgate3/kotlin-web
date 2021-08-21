@@ -7,6 +7,7 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.TestConstructor
 import org.springframework.transaction.annotation.Transactional
+import javax.persistence.EntityManager
 
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @SpringBootTest
@@ -14,12 +15,22 @@ import org.springframework.transaction.annotation.Transactional
 @Rollback
 internal class UserServiceImplTest(
     private val userJpaRepository: UserJpaRepository,
-    private val userRepository: UserRepository
+    private val userRepository: UserRepository,
+    private val em: EntityManager
 ) {
 
     @Test
+    fun testMemberAndTeam(){
+        val t1 = Group(null, "teamA")
+        val t2 = Group(null, "teamB")
+        em.persist(t1)
+        em.persist(t2)
+
+    }
+
+    @Test
     fun testMember() {
-        val member = User (null, "rick")
+        val member = User (null, "rick", 23)
         val savedMember = userJpaRepository.save(member)
 
         var findedMember = userJpaRepository.find(savedMember.id!!)
@@ -32,7 +43,7 @@ internal class UserServiceImplTest(
 
     @Test
     fun testMember1() {
-        val member = User(null,"rick")
+        val member = User(null,"rick",23)
         val savedMember = userRepository.save(member)
 
         val findedMember = savedMember.id?.let {
