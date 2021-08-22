@@ -21,16 +21,37 @@ internal class UserServiceImplTest(
 
     @Test
     fun testMemberAndTeam(){
-        val t1 = Group(null, "teamA")
-        val t2 = Group(null, "teamB")
+        val t1 = Groups(null, "teamA")
+        val t2 = Groups(null, "teamB")
         em.persist(t1)
         em.persist(t2)
 
+        val m1 = User("member1", 10 , t1)
+        val m2 = User("member2", 20 , t1)
+
+        val m3 = User("member3", 30 , t2)
+        val m4 = User("member4", 40 , t2)
+
+        em.persist(m1)
+        em.persist(m2)
+        em.persist(m3)
+        em.persist(m4)
+
+        em.flush()
+        em.clear()
+
+        val users = em.createQuery("select m from User m", User::class.java)
+            .resultList
+
+        users.forEach {
+            println("username = ${it.username}")
+            println("group = ${it.group}")
+        }
     }
 
     @Test
     fun testMember() {
-        val member = User (null, "rick", 23)
+        val member = User ( "rick", 23)
         val savedMember = userJpaRepository.save(member)
 
         var findedMember = userJpaRepository.find(savedMember.id!!)
@@ -43,7 +64,7 @@ internal class UserServiceImplTest(
 
     @Test
     fun testMember1() {
-        val member = User(null,"rick",23)
+        val member = User("rick",23)
         val savedMember = userRepository.save(member)
 
         val findedMember = savedMember.id?.let {

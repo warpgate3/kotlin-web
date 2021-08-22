@@ -8,19 +8,23 @@ import javax.persistence.*
 @Getter
 @Setter
 class User(
-    @Id @GeneratedValue @Column(name = "member_id")  var id: Long?,
+    @Id @GeneratedValue @Column(name = "member_id")
+    var id: Long?,
+
     var username: String,
+
     var age: Int,
+
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "group_id")
-    var group: Group
+    var group: Groups?
 ) {
     init {
-        changeGroup(this.group)
+        this.group?.let { it1 -> changeGroup(it1) }
     }
-//    constructor(id: Long?, username: String, age: Int, group: Group): this(id, username, age) {
-//        changeTeam(group)
-//    }
-    private fun changeGroup(group: Group) {
+    constructor(username: String, age: Int, group: Groups): this(null, username, age, group)
+    constructor(username: String, age: Int): this(null, username, age, null)
+
+    private fun changeGroup(group: Groups) {
         this.group = group
         group.users.add(this)
     }

@@ -8,8 +8,10 @@ import javax.persistence.*
 @Entity
 @Getter
 @Setter
-class Group(
-    @Id @GeneratedValue @Column(name = "member_id")  var id: Long?,
+class Groups(
+    @Id @GeneratedValue @Column(name = "group_id")
+    var id: Long?,
+
     var name: String,
 
     @OneToMany(mappedBy = "group")
