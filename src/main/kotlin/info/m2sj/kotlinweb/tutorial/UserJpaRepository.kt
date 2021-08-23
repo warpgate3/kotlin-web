@@ -11,7 +11,25 @@ class UserJpaRepository(@PersistenceContext val em: EntityManager) {
         return user
     }
 
-    fun find(id: Long): User {
+    fun delete(user: User) {
+        em.remove(user)
+    }
+
+    fun findAll(): List<User> {
+        return em.createQuery("select u from User u", User::class.java)
+            .resultList
+    }
+
+    fun findById(id: Long): User? {
+        return em.find(User::class.java, id)
+    }
+
+    fun count(): Long {
+        return em.createQuery("select count(u) from User u", Long::class.javaObjectType)
+            .singleResult
+    }
+
+    fun find(id:Long): User {
         return em.find(User::class.java, id)
     }
 }

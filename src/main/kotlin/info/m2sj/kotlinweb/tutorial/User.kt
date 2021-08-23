@@ -23,6 +23,7 @@ class User(
     }
     constructor(username: String, age: Int, group: Groups): this(null, username, age, group)
     constructor(username: String, age: Int): this(null, username, age, null)
+    constructor(username: String): this(null, username, 0, null)
 
     private fun changeGroup(group: Groups) {
         this.group = group
