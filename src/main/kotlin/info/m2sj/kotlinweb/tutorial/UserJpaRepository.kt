@@ -25,7 +25,7 @@ class UserJpaRepository(@PersistenceContext val em: EntityManager) {
     }
 
     fun count(): Long {
-        return em.createQuery("select count(u) from User u", Long::class.javaObjectType)
+        return em.createQuery("select count(u) from User u", Long::class.javaObjectType) //unboxed type 을 위한 선언
             .singleResult
     }
 
