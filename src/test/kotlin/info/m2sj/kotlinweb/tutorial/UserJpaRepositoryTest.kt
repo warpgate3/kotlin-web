@@ -16,6 +16,20 @@ internal class UserJpaRepositoryTest(
 ) {
 
     @Test
+    fun findByUsernameAndAgeGreaterThant() {
+        val u1 = User("rick", 10)
+        val u2 = User("rick", 20)
+
+        userJpaRepository.save(u1)
+        userJpaRepository.save(u2)
+
+        val result = userJpaRepository.findByUsernameAndAgeGreaterThan("rick", 15)
+
+        assertThat(result[0].username).isEqualTo("rick")
+        assertThat(result[0].age).isEqualTo(20)
+    }
+
+    @Test
     fun testMember() {
         val u = User("memberA")
         val savedUser = userJpaRepository.save(u)

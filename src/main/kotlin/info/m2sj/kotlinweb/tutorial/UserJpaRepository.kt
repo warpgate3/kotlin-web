@@ -6,6 +6,15 @@ import javax.persistence.PersistenceContext
 
 @Repository
 class UserJpaRepository(@PersistenceContext val em: EntityManager) {
+
+    fun findByUsernameAndAgeGreaterThan(name: String, age: Int): MutableList<User> {
+        return em.createQuery("select m from User m where m.username = :username and m.age > :age"
+            , User::class.java)
+            .setParameter("username", name)
+            .setParameter("age", age)
+            .resultList
+    }
+
     fun save(user: User): User {
         em.persist(user)
         return user
