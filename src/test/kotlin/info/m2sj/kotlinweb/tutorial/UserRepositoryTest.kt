@@ -14,6 +14,34 @@ import org.springframework.transaction.annotation.Transactional
 @Rollback
 class UserRepositoryTest(val userRepository: UserRepository) {
     @Test
+    fun findInNames() {
+        val u1 = User("rick", 10)
+        val u2 = User("rick", 20)
+
+        userRepository.save(u1)
+        userRepository.save(u2)
+
+        val result = userRepository.findUsers(listOf("ric,","rick"))
+        assertThat(result[0].username).isEqualTo("rick")
+        assertThat(result[0].age).isEqualTo(10)
+    }
+
+
+    @Test
+    fun findUserDto() {
+        val u1 = User("rick", 10)
+        val u2 = User("rick", 20)
+
+        userRepository.save(u1)
+        userRepository.save(u2)
+
+        val result = userRepository.findUserDto()
+
+        assertThat(result[0].username).isEqualTo("rick")
+        assertThat(result[0].age).isEqualTo(10)
+    }
+
+    @Test
     fun findByUsernameAndAgeGreaterThant() {
         val u1 = User("rick", 10)
         val u2 = User("rick", 20)
