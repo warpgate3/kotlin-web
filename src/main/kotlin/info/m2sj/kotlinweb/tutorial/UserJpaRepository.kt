@@ -7,6 +7,21 @@ import javax.persistence.PersistenceContext
 @Repository
 class UserJpaRepository(@PersistenceContext val em: EntityManager) {
 
+    fun findByPage(age:Int, offset:Int, limit:Int): MutableList<User> {
+        return em.createQuery("select u from User u where u.age = :age order by u.username desc",
+            User::class.java)
+            .setParameter("age", age)
+            .setFirstResult(offset)
+            .setMaxResults(limit)
+            .resultList
+    }
+
+    fun totalCount(age: Int): Long {
+        return em.createQuery("select count(u) from User u where u.age = :age", Long::class.java)
+            .setParameter("age", age)
+            .singleResult
+    }
+
     fun findByUsernameAndAgeGreaterThan(name: String, age: Int): MutableList<User> {
         return em.createQuery("select m from User m where m.username = :username and m.age > :age"
             , User::class.java)

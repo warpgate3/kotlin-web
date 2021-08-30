@@ -3,6 +3,8 @@ package info.m2sj.kotlinweb.tutorial
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.data.domain.PageRequest
+import org.springframework.data.domain.Sort
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.TestConstructor
@@ -13,6 +15,36 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 @Rollback
 class UserRepositoryTest(val userRepository: UserRepository) {
+    @Test
+    fun page() {
+        userRepository.save(User("u1",10))
+        userRepository.save(User("u2",10))
+        userRepository.save(User("u3",10))
+        userRepository.save(User("u4",10))
+        userRepository.save(User("u5",10))
+
+        val pageRequest = PageRequest.of(0, 3, Sort.by(Sort.Direction.DESC, "username"))
+
+        val pageUser = userRepository.findByAge(10, pageRequest)
+
+        val content = pageUser.content
+
+        assertThat(content.size).isEqualTo(3)
+        assertThat(pageUser.totalElements).isEqualTo(5)
+        assertThat(pageUser.number).isEqualTo(0)
+        assertThat(pageUser.totalPages).isEqualTo(2)
+        assertThat(pageUser.isFirst).isTrue
+        assertThat(pageUser.hasNext()).isTrue
+
+        val top3Users = userRepository.findTop3By()
+
+        assertThat(top3Users.size).isEqualTo(3)
+
+        val userdtos = userRepository.findByAge(10, pageRequest)
+
+
+        val aaa = userdtos.map { m -> UserDto(id=m.id, age=m.age, username=m.username, name=m.group?.name) }
+    }
     @Test
     fun findInNames() {
         val u1 = User("rick", 10)

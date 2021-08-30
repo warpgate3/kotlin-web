@@ -16,6 +16,25 @@ internal class UserJpaRepositoryTest(
 ) {
 
     @Test
+    fun paging() {
+        userJpaRepository.save(User("u1", 10))
+        userJpaRepository.save(User("u2", 10))
+        userJpaRepository.save(User("u3", 10))
+        userJpaRepository.save(User("u4", 10))
+        userJpaRepository.save(User("u5", 10))
+
+        val age = 10
+        val offset = 0
+        val limit = 3
+
+        val users = userJpaRepository.findByPage(age, offset, limit)
+        val totalCount = userJpaRepository.totalCount(age)
+
+        assertThat(users.size).isEqualTo(3)
+        assertThat(totalCount).isEqualTo(5)
+    }
+
+    @Test
     fun findByUsernameAndAgeGreaterThant() {
         val u1 = User("rick", 10)
         val u2 = User("rick", 20)
