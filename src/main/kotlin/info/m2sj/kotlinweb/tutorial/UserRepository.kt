@@ -2,7 +2,9 @@ package info.m2sj.kotlinweb.tutorial
 
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
+import org.springframework.data.jpa.repository.EntityGraph
 import org.springframework.data.jpa.repository.JpaRepository
+import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
 import org.springframework.data.repository.query.Param
 import org.springframework.lang.UsesSunHttpServer
@@ -27,4 +29,17 @@ interface UserRepository: JpaRepository<User, Long> {
     fun findUserAllCountBy(pageable: Pageable): Page<User>
 
     fun findTop3By(): MutableList<User>
+
+    /*
+    * @Modifying 예외 발생 default=false 이지만 벌크 연산후 영속성 컨텍스트와 불일치 해결을 위해 필요
+    */
+    @Modifying(clearAutomatically = true)
+    @Query("update User u set u.age = u.age + 1 where u.age >= :age")
+    fun bulkAgePlus(@Param("age") age:Int)
+
+    @Query("select u from User u left join fetch u.group")
+    fun findUserFetchJoin(): MutableList<User>
+
+    @EntityGraph(attributePaths = ["group"])
+    fun findByUsername(@Param("username") username:String)
 }

@@ -16,6 +16,20 @@ internal class UserJpaRepositoryTest(
 ) {
 
     @Test
+    fun bulkTest() {
+        userJpaRepository.save(User("u1", 10))
+        userJpaRepository.save(User("u2", 19))
+        userJpaRepository.save(User("u3", 20))
+        userJpaRepository.save(User("u4", 21))
+        userJpaRepository.save(User("u5", 40))
+
+        val resultCount = userJpaRepository.bulkAgePlus(20)
+
+        assertThat(resultCount).isEqualTo(3)
+
+    }
+
+    @Test
     fun paging() {
         userJpaRepository.save(User("u1", 10))
         userJpaRepository.save(User("u2", 10))

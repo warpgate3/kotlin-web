@@ -1,6 +1,7 @@
 package info.m2sj.kotlinweb.tutorial
 
 import org.assertj.core.api.Assertions.assertThat
+import org.hibernate.Hibernate
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.data.domain.PageRequest
@@ -14,7 +15,50 @@ import org.springframework.transaction.annotation.Transactional
 @SpringBootTest
 @Transactional
 @Rollback
-class UserRepositoryTest(val userRepository: UserRepository) {
+class UserRepositoryTest(val userRepository: UserRepository, val groupJpaRepository: GroupJpaRepository) {
+
+    @Test
+    fun entityGrapth() {
+        userRepository.findByUsername("")
+    }
+    @Test
+    fun fetchJoinTest() {
+        userRepository.findUserFetchJoin()
+    }
+    @Test
+    fun findMemberLazy() {
+        val a = Groups("agroup")
+        val b = Groups("bgroup")
+
+        groupJpaRepository.save(a)
+        groupJpaRepository.save(b)
+
+        userRepository.save(User("user1", 10 ,a))
+        userRepository.save(User("user2", 20 ,b))
+
+        val users = userRepository.findAll()
+
+
+        users.forEach { user ->
+            println(Hibernate.isInitialized(user.group))
+            println("==>${user.group?.name}")
+        }
+    }
+
+    @Test
+    fun bulkTest() {
+        userRepository.save(User("u1", 10))
+        userRepository.save(User("u2", 19))
+        userRepository.save(User("u3", 20))
+        userRepository.save(User("u4", 21))
+        userRepository.save(User("u5", 40))
+
+        val resultCount = userRepository.bulkAgePlus(20)
+
+        assertThat(resultCount).isEqualTo(3)
+
+    }
+    
     @Test
     fun page() {
         userRepository.save(User("u1",10))

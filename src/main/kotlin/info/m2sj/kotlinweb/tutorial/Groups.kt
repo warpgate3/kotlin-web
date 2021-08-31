@@ -16,4 +16,6 @@ class Groups(
 
     @OneToMany(mappedBy = "group")
     var users: MutableList<User> = mutableListOf()
-)
+) {
+    constructor(name: String): this(null, name)
+}

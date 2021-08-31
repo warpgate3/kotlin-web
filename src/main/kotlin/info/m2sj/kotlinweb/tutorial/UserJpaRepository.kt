@@ -56,4 +56,11 @@ class UserJpaRepository(@PersistenceContext val em: EntityManager) {
     fun find(id:Long): User {
         return em.find(User::class.java, id)
     }
+
+    fun bulkAgePlus(age: Int): Int {
+        return em.createQuery("update User u set u.age = u.age + 1 where u.age >= :age")
+            .setParameter("age", age)
+            .executeUpdate()
+    }
+
 }
