@@ -2,11 +2,14 @@ package info.m2sj.kotlinweb.tutorial
 
 import lombok.Getter
 import lombok.Setter
+import org.springframework.data.jpa.repository.EntityGraph
+import org.springframework.data.jpa.repository.Query
 import javax.persistence.*
 
 @Entity
 @Getter
 @Setter
+@NamedEntityGraph(name = "Member.all", attributeNodes = [NamedAttributeNode("group")])
 class User(
     @Id @GeneratedValue @Column(name = "member_id")
     var id: Long?,
@@ -18,6 +21,8 @@ class User(
     @ManyToOne(fetch = FetchType.LAZY) @JoinColumn(name = "group_id")
     var group: Groups?
 ) {
+
+
     init {
         this.group?.let { it1 -> changeGroup(it1) }
     }

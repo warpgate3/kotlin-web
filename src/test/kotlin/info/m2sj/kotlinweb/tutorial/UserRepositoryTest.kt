@@ -18,6 +18,10 @@ import org.springframework.transaction.annotation.Transactional
 class UserRepositoryTest(val userRepository: UserRepository, val groupJpaRepository: GroupJpaRepository) {
 
     @Test
+    fun queryHint() {
+        userRepository.save(User("user1", 10))
+    }
+    @Test
     fun entityGrapth() {
         userRepository.findByUsername("")
     }

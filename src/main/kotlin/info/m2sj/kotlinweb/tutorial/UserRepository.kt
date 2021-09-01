@@ -2,13 +2,11 @@ package info.m2sj.kotlinweb.tutorial
 
 import org.springframework.data.domain.Page
 import org.springframework.data.domain.Pageable
-import org.springframework.data.jpa.repository.EntityGraph
-import org.springframework.data.jpa.repository.JpaRepository
-import org.springframework.data.jpa.repository.Modifying
-import org.springframework.data.jpa.repository.Query
+import org.springframework.data.jpa.repository.*
 import org.springframework.data.repository.query.Param
 import org.springframework.lang.UsesSunHttpServer
 import java.util.*
+import javax.persistence.QueryHint
 
 interface UserRepository: JpaRepository<User, Long> {
     @Query("select u from User u where u.username= :username and u.age= :age")
@@ -42,4 +40,15 @@ interface UserRepository: JpaRepository<User, Long> {
 
     @EntityGraph(attributePaths = ["group"])
     fun findByUsername(@Param("username") username:String)
+
+    @EntityGraph("User.all")
+    @Query("select u from User u")
+    fun findMemberEntityGraph(): MutableList<User>
+
+    @QueryHints(value = [QueryHint(name = "org.hibernate.readOnly", value = "true")])
+    fun findReadOnlyByUsername(username: String)
+
+    //paging count 을 위한 Query 에도 힌트를적용
+    @QueryHints(value = [QueryHint(name ="org.hibernate.readOnly", value = "true")], forCounting = true)
+    fun findByUsername(name: String, pageable: Pageable)
 }
