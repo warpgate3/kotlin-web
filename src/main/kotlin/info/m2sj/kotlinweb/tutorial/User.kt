@@ -1,9 +1,11 @@
 package info.m2sj.kotlinweb.tutorial
 
+import info.m2sj.kotlinweb.JpaBaseEntity
 import lombok.Getter
 import lombok.Setter
 import org.springframework.data.jpa.repository.EntityGraph
 import org.springframework.data.jpa.repository.Query
+import java.time.LocalDateTime
 import javax.persistence.*
 
 @Entity

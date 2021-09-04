@@ -10,6 +10,7 @@ import org.springframework.data.repository.findByIdOrNull
 import org.springframework.test.annotation.Rollback
 import org.springframework.test.context.TestConstructor
 import org.springframework.transaction.annotation.Transactional
+import java.util.concurrent.TimeUnit
 
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
 @SpringBootTest
@@ -17,6 +18,21 @@ import org.springframework.transaction.annotation.Transactional
 @Rollback
 class UserRepositoryTest(val userRepository: UserRepository, val groupJpaRepository: GroupJpaRepository) {
 
+    //@Test
+//    fun jpaBaseEntity() {
+//        val u = userRepository.save(User("user1", 10))
+//
+//        TimeUnit.SECONDS.sleep(1)
+//
+//        u.username = "user100"
+//
+//        val fu = u?.id?.let {
+//           val ffu = userRepository.findByIdOrNull(it)
+//
+//            print(ffu?.createdDate)
+//            print(ffu?.updatedDate)
+//        }
+//    }
     @Test
     fun queryHint() {
         userRepository.save(User("user1", 10))
